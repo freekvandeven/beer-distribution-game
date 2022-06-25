@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
 ThemeData getTheme() {
-  return ThemeData();
+  return ThemeData(
+    backgroundColor: Colors.white,
+  );
 }
