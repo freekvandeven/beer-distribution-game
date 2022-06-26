@@ -1,5 +1,9 @@
 import 'package:beer_distribution_game/src/config/beerroutes.dart';
+import 'package:beer_distribution_game/src/ui/screens/credits.dart';
 import 'package:beer_distribution_game/src/ui/screens/home.dart';
+import 'package:beer_distribution_game/src/ui/screens/introduction.dart';
+import 'package:beer_distribution_game/src/ui/screens/settings.dart';
+import 'package:beer_distribution_game/src/ui/screens/splash.dart';
 import 'package:flutter/widgets.dart';
 
 Map<String, WidgetBuilder> getRoutes() {
@@ -8,11 +12,11 @@ Map<String, WidgetBuilder> getRoutes() {
       Widget Function(
     BuildContext,
   )>{
-    BeerRoute.splashScreen: (context) => HomeScreen(),
-    BeerRoute.introductionScreen: (context) => HomeScreen(),
+    BeerRoute.splashScreen: (context) => SplashScreen(),
+    BeerRoute.introductionScreen: (context) => IntroductionScreen(),
     BeerRoute.homeScreen: (context) => HomeScreen(),
-    BeerRoute.settingScreen: (context) => HomeScreen(),
-    BeerRoute.creditsScreen: (context) => HomeScreen(),
+    BeerRoute.settingScreen: (context) => SettingScreen(),
+    BeerRoute.creditsScreen: (context) => CreditScreen(),
     BeerRoute.agentConfiguration: (context) => HomeScreen(),
     BeerRoute.gameSelectionScreen: (context) => HomeScreen(),
     BeerRoute.gameConfigurationOverviewScreen: (context) => HomeScreen(),
