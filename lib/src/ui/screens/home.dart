@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
     return BaseScreen(
       child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('homeScreen'),
             GestureDetector(

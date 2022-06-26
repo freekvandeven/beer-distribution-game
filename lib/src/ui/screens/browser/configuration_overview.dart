@@ -1,8 +1,8 @@
 import 'package:beer_distribution_game/src/ui/screens/base.dart';
 import 'package:flutter/material.dart';
 
-class CreditScreen extends StatelessWidget {
-  const CreditScreen({Key? key}) : super(key: key);
+class GameConfigurationOverviewScreen extends StatelessWidget {
+  const GameConfigurationOverviewScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class CreditScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Credits'),
+            Text('All games that you can configure'),
             GestureDetector(
               onTap: () {
                 Navigator.of(context).pop();

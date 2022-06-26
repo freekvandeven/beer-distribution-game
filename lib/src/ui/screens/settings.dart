@@ -9,6 +9,7 @@ class SettingScreen extends StatelessWidget {
     return BaseScreen(
       child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('settingScreen'),
             GestureDetector(
