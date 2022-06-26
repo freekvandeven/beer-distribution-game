@@ -15,6 +15,12 @@ class ConfigureGameScreen extends StatelessWidget {
             Text('Or edit existing one'),
             GestureDetector(
               onTap: () {
+                debugPrint('Saving game');
+              },
+              child: Text('Save'),
+            ),
+            GestureDetector(
+              onTap: () {
                 Navigator.of(context).pop();
               },
               child: Text('go back'),

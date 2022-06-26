@@ -1,3 +1,4 @@
+import 'package:beer_distribution_game/src/config/beerroutes.dart';
 import 'package:beer_distribution_game/src/ui/screens/base.dart';
 import 'package:flutter/material.dart';
 
@@ -14,9 +15,17 @@ class GameLobbyScreen extends StatelessWidget {
             Text('Game Lobby'),
             GestureDetector(
               onTap: () {
+                Navigator.of(context).pushReplacementNamed(
+                  BeerRoute.gameScreen.route,
+                );
+              },
+              child: Text('Start game'),
+            ),
+            GestureDetector(
+              onTap: () {
                 Navigator.of(context).pop();
               },
-              child: Text('go back'),
+              child: Text('Exit lobby'),
             ),
           ],
         ),
