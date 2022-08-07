@@ -1,5 +1,6 @@
 import 'package:beer_distribution_game/src/config/beerroutes.dart';
 import 'package:beer_distribution_game/src/config/routes.dart';
+import 'package:beer_distribution_game/src/config/scroll.dart';
 import 'package:beer_distribution_game/src/config/theme.dart';
 import 'package:beer_distribution_game/src/providers.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,7 @@ class _BeerDistributionGameState extends ConsumerState<BeerDistributionGame> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      scrollBehavior: AppScrollBehavior(),
       theme: getTheme(),
       initialRoute: BeerRoute.splashScreen.route,
       onGenerateRoute: (settings) {

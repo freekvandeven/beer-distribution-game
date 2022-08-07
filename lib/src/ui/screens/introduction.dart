@@ -22,11 +22,12 @@ class IntroductionScreen extends ConsumerStatefulWidget {
 }
 
 class _IntroductionScreenState extends ConsumerState<IntroductionScreen> {
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
   int _currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
+    // TODO(freek): create translation system
     var introductionPages = [
       IntroductionPageItem(
         title: 'Welcome',
@@ -148,24 +149,24 @@ class _IntroductionScreenState extends ConsumerState<IntroductionScreen> {
                               ),
                             ],
                             GestureDetector(
-                                onTap: () {
-                                  _pageController.nextPage(
-                                    duration: Duration(milliseconds: 500),
-                                    curve: Curves.ease,
-                                  );
-                                  setState(() {
-                                    _currentPage++;
-                                  });
-                                },
-                                child: Container(
-                                  decoration: BoxDecoration(),
-                                  width: 100,
-                                  height: 50,
-                                  child: Center(
-                                    child: Text('Next'),
-                                  ),
+                              onTap: () {
+                                _pageController.nextPage(
+                                  duration: Duration(milliseconds: 500),
+                                  curve: Curves.ease,
+                                );
+                                setState(() {
+                                  _currentPage++;
+                                });
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(),
+                                width: 100,
+                                height: 50,
+                                child: Center(
+                                  child: Text('Next'),
                                 ),
-                              )
+                              ),
+                            )
                           ],
                         ),
                       ],
@@ -181,3 +182,5 @@ class _IntroductionScreenState extends ConsumerState<IntroductionScreen> {
     );
   }
 }
+
+// TODO(freek): different layout for mobile and desktop
