@@ -15,28 +15,34 @@ import 'package:beer_distribution_game/src/ui/screens/introduction.dart';
 import 'package:beer_distribution_game/src/ui/screens/settings.dart';
 import 'package:beer_distribution_game/src/ui/screens/splash.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-Map<String, WidgetBuilder> getRoutes() {
+Map<String, ConsumerBuilder> getRoutes() {
   return <
       BeerRoute,
       Widget Function(
     BuildContext,
+    WidgetRef,
+    Widget?,
   )>{
-    BeerRoute.splashScreen: (context) => SplashScreen(),
-    BeerRoute.introductionScreen: (context) => IntroductionScreen(),
-    BeerRoute.homeScreen: (context) => HomeScreen(),
-    BeerRoute.settingScreen: (context) => SettingScreen(),
-    BeerRoute.creditsScreen: (context) => CreditScreen(),
-    BeerRoute.agentConfiguration: (context) => AgentConfigurationScreen(),
-    BeerRoute.gameSelectionScreen: (context) => GameSelectionScreen(),
-    BeerRoute.gameConfigurationOverviewScreen: (context) =>
+    BeerRoute.splashScreen: (context, ref, ___) => SplashScreen(),
+    BeerRoute.introductionScreen: (context, ref, ___) => IntroductionScreen(),
+    BeerRoute.homeScreen: (context, ref, ___) => HomeScreen(),
+    BeerRoute.settingScreen: (context, ref, ___) => SettingScreen(),
+    BeerRoute.creditsScreen: (context, ref, ___) => CreditScreen(),
+    BeerRoute.agentConfiguration: (context, ref, ___) =>
+        AgentConfigurationScreen(),
+    BeerRoute.gameSelectionScreen: (context, ref, ___) => GameSelectionScreen(),
+    BeerRoute.gameConfigurationOverviewScreen: (context, ref, ___) =>
         GameConfigurationOverviewScreen(),
-    BeerRoute.replaysOverviewScreen: (context) => ReplayOverviewScreen(),
-    BeerRoute.lobbyBrowserScreen: (context) => GameBrowserScreen(),
-    BeerRoute.lobbyScreen: (context) => GameLobbyScreen(),
-    BeerRoute.gameScreen: (context) => PlayGameScreen(),
-    BeerRoute.gameOverScreen: (context) => GameEndedScreen(),
-    BeerRoute.gameConfigurationScreen: (context) => ConfigureGameScreen(),
-    BeerRoute.gameReplayScreen: (context) => GameReplayScreen(),
+    BeerRoute.replaysOverviewScreen: (context, ref, ___) =>
+        ReplayOverviewScreen(),
+    BeerRoute.lobbyBrowserScreen: (context, ref, ___) => GameBrowserScreen(),
+    BeerRoute.lobbyScreen: (context, ref, ___) => GameLobbyScreen(),
+    BeerRoute.gameScreen: (context, ref, ___) => PlayGameScreen(),
+    BeerRoute.gameOverScreen: (context, ref, ___) => GameEndedScreen(),
+    BeerRoute.gameConfigurationScreen: (context, ref, ___) =>
+        ConfigureGameScreen(),
+    BeerRoute.gameReplayScreen: (context, ref, ___) => GameReplayScreen(),
   }.map((key, value) => MapEntry(key.route, value));
 }
