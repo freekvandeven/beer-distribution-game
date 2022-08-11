@@ -9,3 +9,4 @@ export 'inventory.dart';
 export 'move.dart';
 export 'player.dart';
 export 'replay.dart';
+export 'supply_node.dart';

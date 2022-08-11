@@ -28,6 +28,7 @@ class ApplicationConfiguration {
         'language': language,
         'introductionFinished': introductionFinished,
       };
+
   ApplicationConfiguration copyWith({
     String? language,
     bool? introductionFinished,

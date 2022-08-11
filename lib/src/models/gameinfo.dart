@@ -10,6 +10,7 @@ class GameInfo {
     required this.connectedPlayers,
     required this.maxPlayers,
   });
+
   final String lobbyName;
   final String configName;
   final int connectedPlayers; // could be removed
