@@ -1,3 +1,4 @@
+export 'agent.dart';
 export 'application_config.dart';
 export 'browser.dart';
 export 'game.dart';

@@ -9,4 +9,13 @@ class PlayerInventory {
 
   final int amount;
   final int transit;
+
+  PlayerInventory copyWith({
+    int? amount,
+    int? transit,
+  }) =>
+      PlayerInventory(
+        amount: amount ?? this.amount,
+        transit: transit ?? this.transit,
+      );
 }

@@ -8,6 +8,7 @@ class BeerGame {
     required this.config,
     required this.players,
     required this.moves,
+    required this.currentRound,
     required this.gameHash,
     this.started,
     this.finished,
@@ -18,6 +19,7 @@ class BeerGame {
         config: GameConfiguration.defaultConfiguration(),
         players: [],
         moves: [],
+        currentRound: 0,
         gameHash: '',
       );
 
@@ -25,7 +27,29 @@ class BeerGame {
   final GameConfiguration config;
   final List<Player> players;
   final List<Move> moves;
+  final int currentRound;
   final String gameHash;
   final DateTime? started;
   final DateTime? finished;
+
+  BeerGame copyWith({
+    String? gameName,
+    GameConfiguration? config,
+    List<Player>? players,
+    List<Move>? moves,
+    int? currentRound,
+    String? gameHash,
+    DateTime? started,
+    DateTime? finished,
+  }) =>
+      BeerGame(
+        gameName: gameName ?? this.gameName,
+        config: config ?? this.config,
+        players: players ?? this.players,
+        moves: moves ?? this.moves,
+        currentRound: currentRound ?? this.currentRound,
+        gameHash: gameHash ?? this.gameHash,
+        started: started ?? this.started,
+        finished: finished ?? this.finished,
+      );
 }

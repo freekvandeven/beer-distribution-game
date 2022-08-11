@@ -16,4 +16,19 @@ class Player {
   final Map<int, int> backlog;
   final String agent;
   final ConnectionInfo? connectionInfo;
+
+  Player copyWith({
+    int? playerNumber,
+    PlayerInventory? inventory,
+    Map<int, int>? backlog,
+    String? agent,
+    ConnectionInfo? connectionInfo,
+  }) =>
+      Player(
+        playerNumber: playerNumber ?? this.playerNumber,
+        inventory: inventory ?? this.inventory,
+        backlog: backlog ?? this.backlog,
+        agent: agent ?? this.agent,
+        connectionInfo: connectionInfo ?? this.connectionInfo,
+      );
 }
