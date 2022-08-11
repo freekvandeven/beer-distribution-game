@@ -45,6 +45,9 @@ class BeerGame extends Equatable {
         finished,
       ];
 
+  @override
+  bool? get stringify => true;
+
   BeerGame copyWith({
     String? gameName,
     GameConfiguration? config,

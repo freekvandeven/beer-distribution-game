@@ -1,6 +1,8 @@
+import 'package:equatable/equatable.dart';
+
 enum NodeType { fabricator, supplier, distributor, retailer, consumer }
 
-class PlayerNode {
+class PlayerNode extends Equatable {
   const PlayerNode({
     required this.type,
     required this.defaultAgentName,
@@ -22,6 +24,17 @@ class PlayerNode {
   final String defaultAgentName;
   final List<int> deliversTo;
   final List<int> receivesFrom;
+
+  @override
+  bool? get stringify => true;
+
+  @override
+  List<Object?> get props => [
+        type,
+        defaultAgentName,
+        deliversTo,
+        receivesFrom,
+      ];
 
   Map<String, dynamic> toJson() => {
         'type': type.index,

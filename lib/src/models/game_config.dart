@@ -1,4 +1,5 @@
 import 'package:beer_distribution_game/src/models/models.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
 enum GameRoundTransition {
@@ -8,7 +9,7 @@ enum GameRoundTransition {
 }
 
 @immutable
-class GameConfiguration {
+class GameConfiguration extends Equatable {
   const GameConfiguration({
     required this.configName,
     required this.transition,
@@ -58,6 +59,22 @@ class GameConfiguration {
   final int maxAmountPlayers;
   final List<PlayerNode> playerNodes;
   final Map<String, String> defaultAgents;
+
+  @override
+  bool? get stringify => true;
+
+  @override
+  List<Object?> get props => [
+        configName,
+        transition,
+        amountRounds,
+        roundTime,
+        autoStartTime,
+        gameSeed,
+        maxAmountPlayers,
+        playerNodes,
+        defaultAgents,
+      ];
 
   Map<String, dynamic> toJson() => {
         'configName': configName,

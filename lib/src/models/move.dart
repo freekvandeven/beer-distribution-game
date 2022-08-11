@@ -1,7 +1,8 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
 @immutable
-class Move {
+class Move extends Equatable {
   const Move({
     required this.sender,
     required this.orders,
@@ -22,6 +23,12 @@ class Move {
   final Map<int, int> orders;
   final Map<int, int> delivers;
   final String gameHash;
+
+  @override
+  bool? get stringify => true;
+
+  @override
+  List<Object?> get props => [sender, orders, delivers, gameHash];
 
   Map<String, dynamic> toJson() => {
         'sender': sender,

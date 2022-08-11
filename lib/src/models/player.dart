@@ -1,8 +1,9 @@
 import 'package:beer_distribution_game/src/models/models.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
 @immutable
-class Player {
+class Player extends Equatable {
   const Player({
     required this.playerNumber,
     required this.inventory,
@@ -16,6 +17,18 @@ class Player {
   final Map<int, int> backlog;
   final String agent;
   final ConnectionInfo? connectionInfo;
+
+  @override
+  bool? get stringify => true;
+
+  @override
+  List<Object?> get props => [
+        playerNumber,
+        inventory,
+        backlog,
+        agent,
+        connectionInfo,
+      ];
 
   Player copyWith({
     int? playerNumber,
