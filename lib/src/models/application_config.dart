@@ -10,7 +10,7 @@ class ApplicationConfiguration {
 
   factory ApplicationConfiguration.defaultConfiguration() =>
       ApplicationConfiguration(
-        language: 'en',
+        language: 'default',
         introductionFinished: false,
       );
 

@@ -25,7 +25,10 @@ class HomeScreen extends StatelessWidget {
                   BeerRoute.gameSelectionScreen.route,
                 );
               },
-              child: Text('Play game'),
+              child: Text(
+                'Play game',
+                style: Theme.of(context).textTheme.headline5,
+              ),
             ),
             GestureDetector(
               onTap: () {
@@ -33,7 +36,10 @@ class HomeScreen extends StatelessWidget {
                   BeerRoute.gameConfigurationOverviewScreen.route,
                 );
               },
-              child: Text('go to game configuration'),
+              child: Text(
+                'Configure a game',
+                style: Theme.of(context).textTheme.headline5,
+              ),
             ),
             GestureDetector(
               onTap: () {
@@ -41,7 +47,10 @@ class HomeScreen extends StatelessWidget {
                   BeerRoute.agentConfiguration.route,
                 );
               },
-              child: Text('Configure agents'),
+              child: Text(
+                'Configure agents',
+                style: Theme.of(context).textTheme.headline5,
+              ),
             ),
             GestureDetector(
               onTap: () {
@@ -49,7 +58,10 @@ class HomeScreen extends StatelessWidget {
                   BeerRoute.replaysOverviewScreen.route,
                 );
               },
-              child: Text('Previous played games'),
+              child: Text(
+                'Previous played games',
+                style: Theme.of(context).textTheme.headline5,
+              ),
             ),
             GestureDetector(
               onTap: () {
@@ -57,7 +69,10 @@ class HomeScreen extends StatelessWidget {
                   BeerRoute.settingScreen.route,
                 );
               },
-              child: Text('go to setting screen'),
+              child: Text(
+                'Settings',
+                style: Theme.of(context).textTheme.headline5,
+              ),
             ),
             GestureDetector(
               onTap: () {
@@ -65,14 +80,20 @@ class HomeScreen extends StatelessWidget {
                   BeerRoute.creditsScreen.route,
                 );
               },
-              child: Text('go to credits screen'),
+              child: Text(
+                'Credits',
+                style: Theme.of(context).textTheme.headline5,
+              ),
             ),
             GestureDetector(
               onTap: () {
                 // exit the app
                 exit(0);
               },
-              child: Text('Exit game'),
+              child: Text(
+                'Exit game',
+                style: Theme.of(context).textTheme.headline5,
+              ),
             ),
           ],
         ),

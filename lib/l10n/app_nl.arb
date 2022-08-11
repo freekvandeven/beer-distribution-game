@@ -1,13 +1,13 @@
 {
-    "appTitle": "Beer Distribution Game",
+    "appTitle": "Bier distributie spel",
     "@appTitle": {
-        "description": "The title of the application"
+        "description": "De titel van de applicatie"
     },
-    "buttonPrevious": "Previous",
-    "buttonNext": "Next",
-    "introduction_page_1_title": "Welcome",
-    "introduction_page_1_body": "This is the introduction for the beer distribution game, you can swipe through the different pages.",
-    "introduction_page_2_title": "Whiplash effect",
+    "buttonPrevious": "Vorige",
+    "buttonNext": "Volgende",
+    "introduction_page_1_title": "Welkom",
+    "introduction_page_1_body": "",
+    "introduction_page_2_title": "Zweepslag effect",
     "introduction_page_2_body": "The goal of the game is to simulate a supply chain and demonstrate the whiplash effect that can occur.",
     "introduction_page_3_title": "Multiplayer",
     "introduction_page_3_body": "The game is multiplayer, so you can play with your friends online.",
@@ -15,10 +15,10 @@
     "introduction_page_4_body": "You can also play the game in singleplayer mode, where you can play against the computer.",
     "introduction_page_5_title": "Agents",
     "introduction_page_5_body": "You can choose between different agents, each with their own strategy. You can also create your own agent in a natural language.",
-    "introduction_page_6_title": "Create game",
+    "introduction_page_6_title": "Een spel aanmaken",
     "introduction_page_6_body": "You can create your own custom game scenario or use an existing one.",
-    "introduction_page_7_title": "Join game",
+    "introduction_page_7_title": "Aan een spel meedoen",
     "introduction_page_7_body": "You can join a game that is already created by someone else.",
-    "introduction_page_8_title": "Replay game",
+    "introduction_page_8_title": "Herspelen spel",
     "introduction_page_8_body": "You can replay a game that you have played before to view all player actions and statistics."
 }

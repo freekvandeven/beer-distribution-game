@@ -1,4 +1,5 @@
 import 'package:beer_distribution_game/src/config/beerroutes.dart';
+import 'package:beer_distribution_game/src/config/language.dart';
 import 'package:beer_distribution_game/src/config/routes.dart';
 import 'package:beer_distribution_game/src/config/scroll.dart';
 import 'package:beer_distribution_game/src/config/theme.dart';
@@ -24,6 +25,7 @@ class _BeerDistributionGameState extends ConsumerState<BeerDistributionGame> {
 
   @override
   Widget build(BuildContext context) {
+    var applicationSettings = ref.watch(applicationConfigProvider);
     return MaterialApp(
       title: 'Beer Distribution Game',
       onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
@@ -33,10 +35,10 @@ class _BeerDistributionGameState extends ConsumerState<BeerDistributionGame> {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: [
-        const Locale('en', 'US'),
-        // const Locale('nl', 'NL'),
-      ],
+      locale: (applicationSettings.language != 'default')
+          ? Locale(applicationSettings.language)
+          : null,
+      supportedLocales: getSupportedLanguages(),
       scrollBehavior: AppScrollBehavior(),
       theme: getTheme(),
       initialRoute: BeerRoute.splashScreen.route,

@@ -1,4 +1,5 @@
 import 'package:beer_distribution_game/src/config/beerroutes.dart';
+import 'package:beer_distribution_game/src/providers.dart';
 import 'package:beer_distribution_game/src/ui/screens/agent.dart';
 import 'package:beer_distribution_game/src/ui/screens/browser/browser.dart';
 import 'package:beer_distribution_game/src/ui/screens/browser/configuration_overview.dart';
@@ -15,7 +16,6 @@ import 'package:beer_distribution_game/src/ui/screens/introduction.dart';
 import 'package:beer_distribution_game/src/ui/screens/settings.dart';
 import 'package:beer_distribution_game/src/ui/screens/splash.dart';
 import 'package:flutter/widgets.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 Map<String, ConsumerBuilder> getRoutes() {
   return <
@@ -28,7 +28,11 @@ Map<String, ConsumerBuilder> getRoutes() {
     BeerRoute.splashScreen: (context, ref, ___) => SplashScreen(),
     BeerRoute.introductionScreen: (context, ref, ___) => IntroductionScreen(),
     BeerRoute.homeScreen: (context, ref, ___) => HomeScreen(),
-    BeerRoute.settingScreen: (context, ref, ___) => SettingScreen(),
+    BeerRoute.settingScreen: (context, ref, ___) => SettingScreen(
+          configService: ref.read(
+            applicationConfigProvider.notifier,
+          ),
+        ),
     BeerRoute.creditsScreen: (context, ref, ___) => CreditScreen(),
     BeerRoute.agentConfiguration: (context, ref, ___) =>
         AgentConfigurationScreen(),
