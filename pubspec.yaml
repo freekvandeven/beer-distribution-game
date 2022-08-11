@@ -18,6 +18,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^2.0.0
   flutter_launcher_icons: ^0.10.0
+  msix: ^3.6.3
 
 flutter:
   uses-material-design: true
@@ -39,3 +40,13 @@ flutter_icons:
     generate: true
     image_path: "assets/images/icon/icon.png"
     icon_size: 48 # min:48, max:256, default: 48
+
+msix_config:
+  display_name: Beer Distribution Game
+  publisher_display_name: Freek van de Ven
+  identity_name: nl.freekvandeven.beer-distribution-game
+  install_certificate: false
+  msix_version: 1.0.0.0
+  languages: en-us
+  logo_path: assets/images/icon/icon.png
+  capabilities: internetClient
