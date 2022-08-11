@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:beer_distribution_game/src/config/beerroutes.dart';
 import 'package:beer_distribution_game/src/ui/screens/base.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Beer Distribution Game',
+              AppLocalizations.of(context)!.appTitle,
               style: Theme.of(context).textTheme.headline3,
             ),
             GestureDetector(

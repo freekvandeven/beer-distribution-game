@@ -1,6 +1,6 @@
 {
-  "name": "beer_distribution_game",
-  "short_name": "beer_distribution_game",
+  "name": "Beer Distribution Game",
+  "short_name": "Beer Distribution Game",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#FFFFFF",

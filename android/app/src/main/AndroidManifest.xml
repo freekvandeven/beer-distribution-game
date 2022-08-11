@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="nl.freekvandeven.beer_distribution_game">
    <application
-        android:label="beer_distribution_game"
+        android:label="Beer Distribution Game"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

@@ -1,0 +1,7 @@
+{
+    "appTitle": "Beer Distribution Game",
+    "@appTitle": {
+        "description": "The title of the application"
+    },
+    "testTranslation": "test"
+}
