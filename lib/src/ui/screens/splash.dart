@@ -1,6 +1,7 @@
 import 'package:beer_distribution_game/src/config/beerroutes.dart';
 import 'package:beer_distribution_game/src/providers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SplashScreen extends ConsumerWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class SplashScreen extends ConsumerWidget {
       backgroundColor: Theme.of(context).splashColor,
       body: Center(
         child: Text(
-          'Beer distribution game',
+          AppLocalizations.of(context)!.appTitle,
           style: Theme.of(context).textTheme.headline1!.copyWith(
                 color: Colors.white,
               ),

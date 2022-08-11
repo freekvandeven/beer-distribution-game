@@ -4,6 +4,7 @@ import 'package:beer_distribution_game/src/providers.dart';
 import 'package:beer_distribution_game/src/services/services.dart';
 import 'package:beer_distribution_game/src/ui/screens/base.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingScreen extends ConsumerWidget {
@@ -18,24 +19,24 @@ class SettingScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     var lang = Localizations.localeOf(context);
+    var translate = AppLocalizations.of(context)!;
     return BaseScreen(
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Application Settings',
+              translate.settings_title,
               style: Theme.of(context).textTheme.headline3,
             ),
             Text(
-              'Language',
+              translate.settings_language,
               style: Theme.of(context).textTheme.headline5,
             ),
             DropdownButton(
               value: lang,
               onChanged: (Locale? val) {
                 if (val != null) {
-                  debugPrint('Selected language: $val');
                   _configService.saveApplicationSettings(
                     ref.read(applicationConfigProvider).copyWith(
                           language: val.languageCode,
@@ -54,37 +55,44 @@ class SettingScreen extends ConsumerWidget {
             ),
             GestureDetector(
               onTap: () async {
-                var prefs = await SharedPreferences.getInstance();
-                await prefs.clear();
-                await ref
-                    .read(applicationConfigProvider.notifier)
-                    .saveApplicationSettings(
-                      ApplicationConfiguration.defaultConfiguration(),
-                    );
-                // show a success message
-                await showDialog(
+                // show a confirmation dialog
+                if (await showDialog(
                   context: context,
                   builder: (context) => AlertDialog(
-                    title: Text('Success'),
-                    content: Text('Settings cleared'),
+                    title: Text(translate.settings_clear_confirm),
                     actions: [
                       TextButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: Text('OK'),
-                      )
+                        onPressed: () => Navigator.of(context).pop(false),
+                        child: Text(translate.buttonCancel),
+                      ),
+                      TextButton(
+                        onPressed: () => Navigator.of(context).pop(true),
+                        child: Text(translate.buttonConfirm),
+                      ),
                     ],
                   ),
-                );
+                )) {
+                  var prefs = await SharedPreferences.getInstance();
+                  await prefs.clear();
+                  await ref
+                      .read(applicationConfigProvider.notifier)
+                      .saveApplicationSettings(
+                        ApplicationConfiguration.defaultConfiguration(),
+                      );
+                  // show a success message
+                }
               },
               child: Text(
-                'Clear application settings',
+                translate.settings_clear,
               ),
             ),
             GestureDetector(
               onTap: () {
                 Navigator.of(context).pop();
               },
-              child: Text('go back'),
+              child: Text(
+                translate.home_back,
+              ),
             ),
           ],
         ),

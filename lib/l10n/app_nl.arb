@@ -5,6 +5,25 @@
     },
     "buttonPrevious": "Vorige",
     "buttonNext": "Volgende",
+    "buttonConfirm": "Ja",
+    "buttonCancel": "Nee",
+
+    "home_play": "Speel een spel",
+    "home_configure_game": "Configureer een spel",
+    "home_configure_agents": "Configureer software agenten",
+    "home_replay": "Eerder gespeelde spellen",
+    "home_settings": "Instellingen",
+    "home_credits": "Credits",
+    "home_exit": "Sluit spel",
+    "home_back": "Ga terug",
+
+
+    "settings_title": "Applicatieinstellingen",
+    "settings_language": "Taal",
+    "settings_clear": "Verwijder applicatie data",
+    "settings_clear_confirm": "Weet je zeker dat je de applicatieinstellingen wilt verwijderen?",
+    "settings_clear_success": "Applicationinstellingen succesvol verwijderd",
+
     "introduction_page_1_title": "Welkom",
     "introduction_page_1_body": "",
     "introduction_page_2_title": "Zweepslag effect",

@@ -10,13 +10,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var translate = AppLocalizations.of(context)!;
     return BaseScreen(
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              AppLocalizations.of(context)!.appTitle,
+              translate.appTitle,
               style: Theme.of(context).textTheme.headline3,
             ),
             GestureDetector(
@@ -26,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: Text(
-                'Play game',
+                translate.home_play,
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),
@@ -37,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: Text(
-                'Configure a game',
+                translate.home_configure_game,
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),
@@ -48,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: Text(
-                'Configure agents',
+                translate.home_configure_agents,
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),
@@ -59,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: Text(
-                'Previous played games',
+                translate.home_replay,
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),
@@ -70,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: Text(
-                'Settings',
+                translate.home_settings,
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),
@@ -81,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               child: Text(
-                'Credits',
+                translate.home_credits,
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),
@@ -91,7 +92,7 @@ class HomeScreen extends StatelessWidget {
                 exit(0);
               },
               child: Text(
-                'Exit game',
+                translate.home_exit,
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),

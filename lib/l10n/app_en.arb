@@ -5,6 +5,25 @@
     },
     "buttonPrevious": "Previous",
     "buttonNext": "Next",
+    "buttonConfirm": "Yes",
+    "buttonCancel": "No",
+    
+    "home_play": "Play game",
+    "home_configure_game": "Configure a game",
+    "home_configure_agents": "Configure agents",
+    "home_replay": "Previous played games",
+    "home_settings": "Settings",
+    "home_credits": "Credits",
+    "home_exit": "Exit game",
+    "home_back": "Go Back",
+
+
+    "settings_title": "Application Settings",
+    "settings_language": "Language",
+    "settings_clear": "Clear Application Settings",
+    "settings_clear_confirm": "Are you sure you want to clear the application settings?",
+    "settings_clear_success": "Application settings cleared successfully",
+
     "introduction_page_1_title": "Welcome",
     "introduction_page_1_body": "This is the introduction for the beer distribution game, you can swipe through the different pages.",
     "introduction_page_2_title": "Whiplash effect",
