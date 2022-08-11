@@ -17,6 +17,20 @@ class SettingScreen extends StatelessWidget {
               onTap: () async {
                 var prefs = await SharedPreferences.getInstance();
                 await prefs.clear();
+                // show a success message
+                await showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Text('Success'),
+                    content: Text('Settings cleared'),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text('OK'),
+                      )
+                    ],
+                  ),
+                );
               },
               child: Text(
                 'Clear application settings',

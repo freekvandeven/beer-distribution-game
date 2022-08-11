@@ -8,10 +8,7 @@ abstract class ApplicationConfigurationService
     extends StateNotifier<ApplicationConfiguration> {
   ApplicationConfigurationService._()
       : super(
-          ApplicationConfiguration(
-            language: 'unknown',
-            introductionFinished: false,
-          ),
+          ApplicationConfiguration.defaultConfiguration(),
         );
 
   Future<void> loadApplicationSettings();
@@ -24,10 +21,7 @@ class BeerApplicationConfigurationService
     implements ApplicationConfigurationService {
   BeerApplicationConfigurationService()
       : super(
-          ApplicationConfiguration(
-            language: 'en',
-            introductionFinished: false,
-          ),
+          ApplicationConfiguration.defaultConfiguration(),
         );
   static String settingsKey = 'settings';
   @override

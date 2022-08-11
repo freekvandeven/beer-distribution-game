@@ -67,15 +67,7 @@ class _IntroductionScreenState extends ConsumerState<IntroductionScreen> {
         onHorizontalDragEnd: (details) {
           if (_currentPage == introductionPages.length - 1) {
             if (details.primaryVelocity! < -500) {
-              var updatedSettings =
-                  ref.read(applicationConfigProvider).copyWith(
-                        introductionFinished: true,
-                      );
-              ref
-                  .read(applicationConfigProvider.notifier)
-                  .saveApplicationSettings(updatedSettings);
-              Navigator.of(context)
-                  .pushReplacementNamed(BeerRoute.homeScreen.route);
+              finishIntroduction(context);
             } else if (details.primaryVelocity! > 500) {
               _pageController.previousPage(
                 duration: Duration(milliseconds: 500),
@@ -150,13 +142,18 @@ class _IntroductionScreenState extends ConsumerState<IntroductionScreen> {
                             ],
                             GestureDetector(
                               onTap: () {
-                                _pageController.nextPage(
-                                  duration: Duration(milliseconds: 500),
-                                  curve: Curves.ease,
-                                );
-                                setState(() {
-                                  _currentPage++;
-                                });
+                                if (_currentPage ==
+                                    introductionPages.length - 1) {
+                                  finishIntroduction(context);
+                                } else {
+                                  _pageController.nextPage(
+                                    duration: Duration(milliseconds: 500),
+                                    curve: Curves.ease,
+                                  );
+                                  setState(() {
+                                    _currentPage++;
+                                  });
+                                }
                               },
                               child: Container(
                                 decoration: BoxDecoration(),
@@ -180,6 +177,16 @@ class _IntroductionScreenState extends ConsumerState<IntroductionScreen> {
         ),
       ),
     );
+  }
+
+  void finishIntroduction(BuildContext context) {
+    var updatedSettings = ref.read(applicationConfigProvider).copyWith(
+          introductionFinished: true,
+        );
+    ref
+        .read(applicationConfigProvider.notifier)
+        .saveApplicationSettings(updatedSettings);
+    Navigator.of(context).pushReplacementNamed(BeerRoute.homeScreen.route);
   }
 }
 

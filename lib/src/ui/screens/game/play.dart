@@ -15,8 +15,9 @@ class PlayGameScreen extends StatelessWidget {
             Text('Playing the game'),
             GestureDetector(
               onTap: () {
-                Navigator.of(context)
-                    .pushReplacementNamed(BeerRoute.gameOverScreen.route,);
+                Navigator.of(context).pushReplacementNamed(
+                  BeerRoute.gameOverScreen.route,
+                );
               },
               child: Text('Game ended'),
             ),

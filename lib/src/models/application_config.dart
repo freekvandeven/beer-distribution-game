@@ -8,6 +8,12 @@ class ApplicationConfiguration {
     required this.introductionFinished,
   });
 
+  factory ApplicationConfiguration.defaultConfiguration() =>
+      ApplicationConfiguration(
+        language: 'en',
+        introductionFinished: false,
+      );
+
   factory ApplicationConfiguration.fromJson(Map<String, dynamic> json) {
     return ApplicationConfiguration(
       language: json['language'] as String,
