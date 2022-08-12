@@ -36,7 +36,9 @@ Map<String, ConsumerBuilder> getRoutes() {
     BeerRoute.creditsScreen: (context, ref, ___) => CreditScreen(),
     BeerRoute.agentConfiguration: (context, ref, ___) =>
         AgentConfigurationScreen(),
-    BeerRoute.gameSelectionScreen: (context, ref, ___) => GameSelectionScreen(),
+    BeerRoute.gameSelectionScreen: (context, ref, ___) => GameSelectionScreen(
+          gameService: ref.read(gameProvider.notifier),
+        ),
     BeerRoute.gameConfigurationOverviewScreen: (context, ref, ___) =>
         GameConfigurationOverviewScreen(),
     BeerRoute.replaysOverviewScreen: (context, ref, ___) =>

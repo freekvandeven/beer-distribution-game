@@ -6,6 +6,8 @@ abstract class GameService extends StateNotifier<BeerGame> {
       : super(
           BeerGame.defaultGame(),
         );
+
+  Future<bool> connectToLobby(String lobbyName);
 }
 
 class BeerGameService extends StateNotifier<BeerGame> implements GameService {
@@ -13,4 +15,9 @@ class BeerGameService extends StateNotifier<BeerGame> implements GameService {
       : super(
           BeerGame.defaultGame(),
         );
+
+  @override
+  Future<bool> connectToLobby(String lobbyName) async {
+    return true;
+  }
 }

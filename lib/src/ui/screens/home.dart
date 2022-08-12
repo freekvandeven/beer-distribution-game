@@ -1,8 +1,7 @@
-import 'dart:io';
-
 import 'package:beer_distribution_game/src/config/beerroutes.dart';
 import 'package:beer_distribution_game/src/ui/screens/base.dart';
 import 'package:beer_distribution_game/src/ui/widgets/buttons/primary_button.dart';
+import 'package:beer_distribution_game/src/ui/widgets/dialogs/exit_app.dart';
 import 'package:beer_distribution_game/src/ui/widgets/game_explainer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -71,19 +70,18 @@ class HomeScreen extends StatelessWidget {
       MainMenuItem(
         title: translate.home_exit,
         icon: Icons.exit_to_app,
-        action: (context) => _exitConfirmationDialog(context, translate),
+        action: _exitConfirmationDialog,
       ),
     ];
     return BaseScreen(
       escapeTrigger: () {
-        _exitConfirmationDialog(context, translate);
+        _exitConfirmationDialog(context);
       },
       child: SingleChildScrollView(
         child: Column(
           children: [
             Container(
               decoration: BoxDecoration(
-                //lineargradient
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -144,24 +142,10 @@ class HomeScreen extends StatelessWidget {
 
   void _exitConfirmationDialog(
     BuildContext context,
-    AppLocalizations translate,
   ) {
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: Text(translate.home_exit),
-        content: Text(translate.home_exit_confirmation),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text(translate.buttonCancel),
-          ),
-          TextButton(
-            onPressed: () => exit(0),
-            child: Text(translate.home_exit),
-          ),
-        ],
-      ),
+      builder: (context) => QuitAppDialog(),
     );
   }
 }
