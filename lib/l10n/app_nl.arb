@@ -20,7 +20,7 @@
 
 
     "settings_title": "Applicatieinstellingen",
-    "settings_language": "Taal",
+    "settings_language": "Selecteer Taal",
     "settings_clear": "Verwijder applicatie data",
     "settings_clear_confirm": "Weet je zeker dat je de applicatieinstellingen wilt verwijderen?",
     "settings_clear_success": "Applicationinstellingen succesvol verwijderd",

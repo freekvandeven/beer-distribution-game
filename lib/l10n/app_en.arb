@@ -20,13 +20,13 @@
 
 
     "settings_title": "Application Settings",
-    "settings_language": "Language",
+    "settings_language": "Select Language",
     "settings_clear": "Clear Application Settings",
     "settings_clear_confirm": "Are you sure you want to clear the application settings?",
     "settings_clear_success": "Application settings cleared successfully",
     
     "credits_made_by": "App made by",
-    
+
     "introduction_page_1_title": "Welcome",
     "introduction_page_1_body": "This is the introduction for the beer distribution game, you can swipe through the different pages.",
     "introduction_page_2_title": "Whiplash effect",
