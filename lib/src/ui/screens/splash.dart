@@ -6,7 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SplashScreen extends ConsumerWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
-  static final Duration _splashDuration = Duration(seconds: 1);
+  static final Duration _splashDuration = Duration(milliseconds: 1);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

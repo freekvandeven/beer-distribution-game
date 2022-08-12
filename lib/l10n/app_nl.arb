@@ -3,6 +3,7 @@
     "@appTitle": {
         "description": "De titel van de applicatie"
     },
+    "appTitleSubtext": "Learn supply-chain principles through a visual simulation",
     "buttonPrevious": "Vorige",
     "buttonNext": "Volgende",
     "buttonConfirm": "Ja",

@@ -9,7 +9,9 @@ class BaseScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
-      body: child,
+      body: SafeArea(
+        child: child,
+      ),
     );
   }
 }
