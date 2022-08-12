@@ -10,6 +10,7 @@ class CreditScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var translate = AppLocalizations.of(context)!;
     return BaseScreen(
+      escapeTrigger: () => Navigator.of(context).pop(),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(

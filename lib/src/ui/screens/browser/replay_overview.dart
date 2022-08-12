@@ -8,6 +8,7 @@ class ReplayOverviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
+      escapeTrigger: () => Navigator.of(context).pop(),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

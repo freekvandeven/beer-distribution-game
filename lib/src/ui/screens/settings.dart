@@ -22,6 +22,7 @@ class SettingScreen extends ConsumerWidget {
     var lang = Localizations.localeOf(context);
     var translate = AppLocalizations.of(context)!;
     return BaseScreen(
+      escapeTrigger: () => Navigator.of(context).pop(),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(

@@ -71,10 +71,13 @@ class HomeScreen extends StatelessWidget {
       MainMenuItem(
         title: translate.home_exit,
         icon: Icons.exit_to_app,
-        action: (context) => exit(0),
+        action: (context) => _exitConfirmationDialog(context, translate),
       ),
     ];
     return BaseScreen(
+      escapeTrigger: () {
+        _exitConfirmationDialog(context, translate);
+      },
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -135,6 +138,29 @@ class HomeScreen extends StatelessWidget {
             GameExplainerWidget(),
           ],
         ),
+      ),
+    );
+  }
+
+  void _exitConfirmationDialog(
+    BuildContext context,
+    AppLocalizations translate,
+  ) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(translate.home_exit),
+        content: Text(translate.home_exit_confirmation),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text(translate.buttonCancel),
+          ),
+          TextButton(
+            onPressed: () => exit(0),
+            child: Text(translate.home_exit),
+          ),
+        ],
       ),
     );
   }

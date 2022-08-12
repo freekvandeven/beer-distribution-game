@@ -16,8 +16,8 @@
     "home_settings": "Settings",
     "home_credits": "Credits",
     "home_exit": "Exit game",
+    "home_exit_confirmation": "Are you sure you want to exit the game?",
     "home_back": "Go Back",
-
 
     "settings_title": "Application Settings",
     "settings_language": "Select Language",
