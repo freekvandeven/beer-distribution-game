@@ -15,7 +15,7 @@ class _GameExplainerWidgetState extends State<GameExplainerWidget> {
 
   // TODO(freek): fix layout for mobile screen
   // TODO(freek): translate the explainer text
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
