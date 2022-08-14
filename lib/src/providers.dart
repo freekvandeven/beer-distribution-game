@@ -27,3 +27,12 @@ final applicationConfigProvider = StateNotifierProvider<
 final gameLogicProvider = Provider<GameLogicService>(
   (ref) => MitGameRulesLogicService(),
 );
+
+final agentStorageProvider =
+    StateNotifierProvider<AgentStorageService, List<Agent>>(
+  (ref) => SharedPreferenceAgentStorageService(),
+);
+
+final agentServiceProvider = Provider<AgentService>(
+  (ref) => ANTLRAgentService(),
+);
